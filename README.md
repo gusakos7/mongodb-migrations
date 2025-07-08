@@ -90,3 +90,49 @@ docker run --rm \
   --network=<your_internal_network> \
   <name_of_your_image>:<tag> npm run <command>
 ```
+
+## Workflow
+
+Make sure that in the root directory you have the directory: `src/migrations`, **if not create it yourself**.
+
+### Create a migration
+
+Create your migration script file by running the command:
+
+```bash
+npm run migration:create migration-example
+```
+
+You should see a file generated in the `src/migrations/` directory like `20250708131842-migration-example.js`. This command is meant to be run **only locally, not from a Docker container**.
+
+In the generated file there will be two functions exported `up` where you will write all the changes you want to apply and `down` where you will revert all of the changes applied by the `up` function.
+
+### Run the migration
+
+As shown in the previous section, to run the migration you should run the command:
+
+```bash
+npm run migrate:up
+```
+
+either locally or via Docker container. This command will run **all** the migrations from the beginning and apply only the ones that haven't already been run.
+
+### Revert migration
+
+To revert the changes of a migration you can run the command:
+
+```bash
+npm run migrate:down
+```
+
+either locally or via Docker container. This command will revert the migrations **one at a time**.
+
+### Check status
+
+To check which migrations have been applied into a MongoDB you can run the command:
+
+```bash
+npm run migrate:status
+```
+
+either locally or via Docker container.
