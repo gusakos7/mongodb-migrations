@@ -1,0 +1,26 @@
+{
+  "name": "mongodb-migrations",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "migrate:create": "npx migrate-mongo create",
+    "migrate:up": "npx migrate-mongo up",
+    "migrate:down": "npx migrate-mongo down",
+    "migrate:status": "npx migrate-mongo status"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github-gusakos:gusakos7/mongodb-migrations.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "mongodb": "^6.16.0"
+  },
+  "devDependencies": {
+    "migrate-mongo": "^12.1.3"
+  }
+}
