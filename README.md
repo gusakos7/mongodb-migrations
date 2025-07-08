@@ -2,6 +2,8 @@
 
 This service handles schema validation and index migrations for MongoDB in a microservices architecture. It's built using [`migrate-mongo`](https://github.com/seppevs/migrate-mongo) and is packaged as a Docker container for consistent, repeatable execution.
 
+Docker Image: `ghrc.io/gusakos7/mongodb-migrations:1.0.0`
+
 ---
 
 ## ⚡ Available commands
